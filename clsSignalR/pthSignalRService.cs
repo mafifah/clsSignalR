@@ -15,7 +15,7 @@ namespace clsSignalR
             HttpClient client = new HttpClient(HttpCh);
             client.BaseAddress = new Uri("http://assignalrserver.azurewebsites.net");
             _hc = new HubConnectionBuilder().WithUrl(client.BaseAddress).Build();
-            _hc.On<Action<PesanSignalR>, bool>("TerimaPesan", TerimaPesan);
+            //_hc.On<Action<PesanSignalR>, bool>("TerimaPesan", TerimaPesan);
         }
 
         public async Task MulaiKoneksi(string klien)
