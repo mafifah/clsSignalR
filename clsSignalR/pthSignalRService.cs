@@ -10,10 +10,10 @@ namespace clsSignalR
 
         public pthSignalRService()
         {
-            HttpClientHandler HttpCh = new HttpClientHandler();
-            HttpCh.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            HttpClient client = new HttpClient(HttpCh);
-            client.BaseAddress = new Uri("http://assignalrserver.azurewebsites.net");
+            //HttpClientHandler HttpCh = new HttpClientHandler();
+            //HttpCh.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://assignalrserver.azurewebsites.net/chathub");
             _hc = new HubConnectionBuilder().WithUrl(client.BaseAddress).Build();
             //_hc.On<Action<PesanSignalR>, bool>("TerimaPesan", TerimaPesan);
         }
